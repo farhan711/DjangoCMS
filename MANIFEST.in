@@ -1,0 +1,13 @@
+include AUTHORS
+include LICENSE
+include README.rst
+include CHANGELOG.txt
+recursive-include cms/locale *
+recursive-include cms/templates *
+recursive-include cms/static *
+recursive-include cms/plugins *
+recursive-include menus/templates *
+recursive-include stacks/templates *
+recursive-include docs *
+recursive-exclude * *.pyc
+recursive-exclude * *.scssc
