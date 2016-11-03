@@ -10,7 +10,7 @@ from cms.models import Page
 from cms.utils import get_template_from_request
 from cms.utils.conf import get_cms_setting
 
-
+#file rendering the context
 def render_page(request, page, current_language, slug):
     """
     Renders a page
@@ -22,6 +22,7 @@ def render_page(request, page, current_language, slug):
     context['current_page'] = page
     context['has_change_permissions'] = page.has_change_permission(request)
     context['has_view_permissions'] = page.has_view_permission(request)
+    #View context pulled and dispalyed from usual logins.
 
     if not context['has_view_permissions']:
         return _handle_no_page(request, slug)
@@ -55,7 +56,7 @@ def _handle_no_page(request, slug):
     context = {}
     context['cms_version'] = __version__
     context['cms_edit_on'] = get_cms_setting('CMS_TOOLBAR_URL__EDIT_ON')
-
+    #Edit view for context
     if not slug and settings.DEBUG:
         return TemplateResponse(request, "cms/welcome.html", context)
     try:
