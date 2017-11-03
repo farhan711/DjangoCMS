@@ -1,8 +1,6 @@
 // jshint node: true
 'use strict';
 
-// #####################################################################################################################
-// #IMPORTS#
 var autoprefixer = require('gulp-autoprefixer');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
